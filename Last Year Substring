@@ -1,0 +1,85 @@
+//   Link : https://codeforces.com/problemset/problem/1462/B
+
+
+// Code:
+
+import java.io.*;
+import java.util.*;
+
+public class CodeF1
+{
+
+
+   // .....................................input stuff started....................................
+private static StringTokenizer st;
+    
+    public static void nextLine(BufferedReader br) throws IOException
+    {
+        st = new StringTokenizer(br.readLine());
+    }
+    
+    public static int nextInt()
+    {
+        return Integer.parseInt(st.nextToken());
+    }
+    
+    public static String next()
+    {
+        return st.nextToken();
+    }
+    
+    public static long nextLong()
+    {
+        return Long.parseLong(st.nextToken());
+    }
+
+    public static double nextDouble()
+    {
+        return Double.parseDouble(st.nextToken());
+    }
+    
+       // .....................................input stuff ends....................................
+
+
+    
+    public static void main(String[] args) throws IOException
+    {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter out = new BufferedWriter(new OutputStreamWriter(System.out));
+        nextLine(br);
+        int t= nextInt();
+        for (int tt = 0; tt <t ; tt++) {
+        	nextLine(br);
+            int n= nextInt();
+            nextLine(br);
+            String s= next();
+            if(s.equals("2020")){
+                out.append("YES"+"\n");
+            }
+            else{
+                int l= n-4;
+                boolean b=false;
+                for (int i = 0; i <n ; i++) {
+                    int r= i+l-1;
+                    if(r<n && ((s.substring(0,i)+s.substring(r+1)).equals("2020"))){
+                        b=true;
+                        break;
+                    }
+                }
+ 
+                if(b){
+                    out.append("YES"+"\n");
+                }
+                else{
+                    out.append("NO"+"\n");
+                }
+            }
+        }
+    	
+    	out.flush();
+        out.close();
+    
+    }
+
+   
+}
